@@ -1,0 +1,6 @@
+#REPLACE FILE1 jugador
+#REPLACE jugador.Recnum |FN1,0
+#REPLACE jugador.jugadorId |FN1,1
+#REPLACE jugador.nombre |FS1,2
+#REPLACE jugador.apellido |FS1,3
+#REPLACE jugador.nacionalidad |FS1,4

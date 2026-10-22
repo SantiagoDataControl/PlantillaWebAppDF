@@ -1,0 +1,105 @@
+﻿Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg 
+Use cWebHtmlBox.pkg
+
+Object oAbout is a cWebView
+    Set piMaxWidth to 1024
+    Set psCaption to "About"
+    Set pbShowCaption to False
+
+    // Your DDO structure will go here
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+        
+       Object oAnexoAHtml is a cWebHtmlBox
+            Set piColumnSpan to 12
+            Set pbFillHeight to True
+            Set pbScroll to True
+
+            Procedure End_Construct_Object
+                String sHtml
+
+                // ---------- ESTILOS (solo afectan a este anexo) ----------
+                Move "<style>" to sHtml
+                Append sHtml "#OWEBAPP .AnexoA { box-sizing:border-box; max-width:820px; margin:0 auto; "
+                Append sHtml "padding:24px 28px 32px 28px; font-size:16px; line-height:1.55; color:#222222; overflow-wrap:anywhere; }"
+                Append sHtml "#OWEBAPP .AnexoA * { box-sizing:border-box; }"
+                Append sHtml "#OWEBAPP .AnexoA .AnxTitulo { font-size:30px; font-weight:700; line-height:1.25; margin:0 0 44px 0; padding:0; }"
+                Append sHtml "#OWEBAPP .AnexoA .AnxSeccion { font-size:19px; font-weight:700; line-height:1.35; margin:32px 0 12px 0; padding:0; }"
+                Append sHtml "#OWEBAPP .AnexoA .AnxSeccion sup { font-size:0.65em; vertical-align:super; line-height:0; }"
+                Append sHtml "#OWEBAPP .AnexoA p { margin:0 0 14px 0; padding:0; }"
+                Append sHtml "#OWEBAPP .AnexoA p.AnxSub { font-weight:700; margin:0; }"
+                Append sHtml "#OWEBAPP .AnexoA p.AnxPegado { margin:0; }"
+                Append sHtml "#OWEBAPP .AnexoA .AnxLista { margin:2px 0 0 0; padding-left:24px; }"
+                Append sHtml "#OWEBAPP .AnexoA a { color:#0563C1; text-decoration:underline; }"
+                // Pantallas estrechas (movil)
+                Append sHtml "@media (max-width:600px) {"
+                Append sHtml " #OWEBAPP .AnexoA { padding:16px 14px 24px 14px; font-size:15px; }"
+                Append sHtml " #OWEBAPP .AnexoA .AnxTitulo { font-size:23px; margin-bottom:32px; }"
+                Append sHtml " #OWEBAPP .AnexoA .AnxSeccion { font-size:17px; margin-top:26px; }"
+                Append sHtml " #OWEBAPP .AnexoA .AnxLista { padding-left:16px; }"
+                Append sHtml "}"
+                Append sHtml "</style>"
+
+                // ---------- CONTENIDO ----------
+                Append sHtml "<div class='AnexoA'>"
+
+                // Titulo
+                Append sHtml "<div class='AnxTitulo'>Annex A &ndash; Official Texts and References</div>"
+
+                // 1
+                Append sHtml "<div class='AnxSeccion'><sup>1</sup> Persistent identification wording (header/footer text).</div>"
+                Append sHtml "<p class='AnxSub'>Consistent Header &amp; Footer</p>"
+                Append sHtml "<div class='AnxLista'>-&nbsp;&nbsp;&nbsp;Header: DataFlex Educational Program Framework</div>"
+
+                // 2
+                Append sHtml "<div class='AnxSeccion'><sup>2</sup> Official disclaimer text for the &ldquo;About&rdquo; section (English master version).</div>"
+                Append sHtml "<p class='AnxSub'>About Disclaimer</p>"
+                Append sHtml "<p>Educational Use Statement</p>"
+                Append sHtml "<p>This application has been developed as part of an educational program using DataFlex technology "
+                Append sHtml "within the DataFlex Educational Partnership Initiative coordinated by Data Access Europe BV (DAE).</p>"
+                Append sHtml "<p>The application is intended exclusively for academic learning and demonstration purposes. It is not "
+                Append sHtml "designed as a production system and is not intended for commercial or operational deployment.</p>"
+                Append sHtml "<p>Should a project evolve beyond its educational context, a transition to an appropriately licensed "
+                Append sHtml "commercial DataFlex environment will be required in coordination with Data Access Europe BV.</p>"
+                Append sHtml "<p>Data Access Europe BV does not provide certification or warranty for individual student-developed "
+                Append sHtml "applications.</p>"
+
+                // 3
+                Append sHtml "<div class='AnxSeccion'><sup>3</sup> Official DataFlex and/or Data Access URLs to be referenced.</div>"
+                Append sHtml "<p><a href='https://www.dataflex.dev' target='_blank'>www.dataflex.dev</a></p>"
+
+                // 4
+                Append sHtml "<div class='AnxSeccion'><sup>4</sup> Standardized GitHub README disclaimer (English master version).</div>"
+                Append sHtml "<p class='AnxPegado'>Educational Project Statement</p>"
+                Append sHtml "<p>This repository contains work developed within an educational program using DataFlex technology "
+                Append sHtml "under the DataFlex Educational Program Framework coordinated by Data Access Europe BV.</p>"
+                Append sHtml "<p>The project is intended for learning and demonstration purposes only. It is not production software "
+                Append sHtml "and is not intended for commercial deployment.</p>"
+                Append sHtml "<p>Any future commercial or operational use would require a properly licensed DataFlex environment "
+                Append sHtml "and appropriate coordination with Data Access Europe BV.</p>"
+                Append sHtml "<p>This repository does not constitute certification or endorsement by Data Access Europe BV</p>"
+
+                // 5
+                Append sHtml "<div class='AnxSeccion'><sup>5</sup> Confirmation of the official branding guidelines reference or URL to be used.</div>"
+                Append sHtml "<p class='AnxSub'>Branding Guideline Reference</p>"
+                Append sHtml "<p>Brand usage within the educational program should align with the official DataFlex Branding "
+                Append sHtml "Guidelines.&nbsp; Official logos and brand assets are described in the &ldquo;DataFlex Branding &amp; Design "
+                Append sHtml "guidelines.PDF&rdquo;. Any questions regarding appropriate brand usage can be coordinated directly with "
+                Append sHtml "DAE (<a href='mailto:info@dataaccess.eu'>info@dataaccess.eu</a>) to ensure consistency and alignment.</p>"
+
+                Append sHtml "</div>"
+
+                Set psHtml to sHtml
+                Forward Send End_Construct_Object
+            End_Procedure
+        End_Object
+
+        
+
+        
+    End_Object 
+
+End_Object

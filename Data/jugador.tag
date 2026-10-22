@@ -1,0 +1,4 @@
+jugadorId
+nombre
+apellido
+nacionalidad
