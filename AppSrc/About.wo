@@ -34,17 +34,22 @@ Object oAbout is a cWebView
                 Append sHtml "#OWEBAPP .AnexoA p.AnxPegado { margin:0; }"
                 Append sHtml "#OWEBAPP .AnexoA .AnxLista { margin:2px 0 0 0; padding-left:24px; }"
                 Append sHtml "#OWEBAPP .AnexoA a { color:#0563C1; text-decoration:underline; }"
+                Append sHtml "#OWEBAPP .AnexoA .AnxLogo { display:block; width:96px; max-width:100%; height:auto; margin:0 0 20px 0; }"
                 // Pantallas estrechas (movil)
                 Append sHtml "@media (max-width:600px) {"
                 Append sHtml " #OWEBAPP .AnexoA { padding:16px 14px 24px 14px; font-size:15px; }"
                 Append sHtml " #OWEBAPP .AnexoA .AnxTitulo { font-size:23px; margin-bottom:32px; }"
                 Append sHtml " #OWEBAPP .AnexoA .AnxSeccion { font-size:17px; margin-top:26px; }"
                 Append sHtml " #OWEBAPP .AnexoA .AnxLista { padding-left:16px; }"
+                Append sHtml " #OWEBAPP .AnexoA .AnxLogo { width:72px; margin-bottom:16px; }"
                 Append sHtml "}"
                 Append sHtml "</style>"
 
                 // ---------- CONTENIDO ----------
                 Append sHtml "<div class='AnexoA'>"
+
+                // Logo DataFlex
+                Append sHtml "<img class='AnxLogo' src='Images/LogoDF.png' alt='DataFlex'>"
 
                 // Titulo
                 Append sHtml "<div class='AnxTitulo'>Annex A &ndash; Official Texts and References</div>"

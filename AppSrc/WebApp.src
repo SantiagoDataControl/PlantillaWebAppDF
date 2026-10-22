@@ -65,15 +65,7 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
                 End_Object
-
-                Object oSignOut_itm is a cWebMenuItem
-                    Set psCaption to C_$LogOut
-
-                    Procedure OnClick
-                        Send RequestLogOut of ghoWebSessionManager
-                    End_Procedure
-                End_Object
-
+                
                 Object oAboutItem1 is a cWebMenuItem
                     Set psCaption to "About"
 
@@ -84,6 +76,16 @@ Object oWebApp is a cWebApp
                             Send NavigatePath
                     End_Procedure
                 End_Object
+
+                Object oSignOut_itm is a cWebMenuItem
+                    Set psCaption to C_$LogOut
+
+                    Procedure OnClick
+                        Send RequestLogOut of ghoWebSessionManager
+                    End_Procedure
+                End_Object
+
+                
                 
             End_Object  
 
